@@ -1,0 +1,36 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+    background-color: antiquewhite;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* used for removing the space above the navbar */
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    background-color: black;
+    color:whitesmoke;
+}
+nav ul li{
+    font-family: 'Ubuntu', sans-serif;
+    padding-right: 10px;
+    font-size: medium;
+}
+
+.brand{
+    font-weight: bolder;
+    font-size: large;
+}
+.brand img{
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    padding-top: 5px;
+}
