@@ -17,6 +17,7 @@ nav ul{
     align-items: center;
     background-color: black;
     color:whitesmoke;
+    height: 55px;
 }
 nav ul li{
     font-family: 'Ubuntu', sans-serif;
@@ -29,8 +30,56 @@ nav ul li{
     font-size: large;
 }
 .brand img{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     margin-left: 10px;
-    padding-top: 5px;
+    padding-top: 1px;
+}
+
+.container{
+    height: 70vh;
+    width: 70%;
+    background-color: black;
+    margin: 20px auto;
+    display: flex;
+    padding: 34px;
+    border-radius: 12px;
+    background-image: url("./resources/bg.jpg");
+    image-resolution: 300dpi;
+}
+.bottom{
+    display: flex;
+    background-color: black;
+    color:whitesmoke;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#play{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.playButtons{
+    display:flexbox;
+    margin-top: 10px;
+    /* height:5vh;
+    width: 5vw; */
+    align-items: center;
+    justify-content: space-between;
+    flex-direction:row;
+
+}
+
+.playButtons svg{
+    cursor: pointer;
+}
+ 
+
+#songPlayRange{
+    width: 80vw;
 }
