@@ -4,3 +4,4 @@ For practise of HTML, CSS and JS, I have done some hobby projects, which maybe r
 The projects are:
 
 1.  Spotify - Clone
+2.  Analog Clock
