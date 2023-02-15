@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+}
+
+.sky{
+    position: relative;
+    height:200vh;
+    width:1000vw;
+    background-image: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    animation-name: bgSkyShake;
+    animation-duration: .6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: trackBackward;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.trees{
+    position: absolute;
+    height: 120vh;
+    width: 1000vw;
+    top: -15vh;
+    background-image: url(./images/trees.png);
+    animation-name: bgTreesShake;
+    animation-duration: .1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: trackBackward;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* background-repeat: repeat-x; */
+}
+
+.track{
+    position:absolute;
+    height: 50vh;
+    width: 1000vw;      
+    /* set width for infinite track in x-diection */
+    top: 70vh;
+    background-image: url("./images/track.png");
+    background-repeat: repeat-x;
+    animation-name: trackBackward;
+    animation-duration: 13s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+.car{
+    position: relative;
+    height: 30vh;
+    width: 25vw;
+    background-image: url(./images/car_body.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 70vh;
+    left: 20vw;
+    animation-name: carMove;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    animation-name: trackFwd;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.leftWheel img{
+    position: relative;
+    height: 10vh;
+    width: 6vw;
+    top: 5vh;
+    left: 2.2vw;
+    animation-name: wheelRotate;
+    animation-duration: .15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+
+.rightWheel img{
+    position: relative;
+    height: 9.5vh;
+    width: 5.5vw;
+    left: 15.3vw;
+    top: -5vh;
+    animation-name: wheelRotate;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} 
+
+
+
+
+
+/* Even with .leftWheel div the rotating animation is NOT working */
+
+/* .leftWheel {
+    position: relative;
+    background-image: url(./images/car_wheel_left.png);
+    height: 15vh;
+    width: 9.3vw;
+    left: 3.03vw;
+    top: 5.8vh;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    animation-name: wheelRotate;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.rightWheel {
+    position: relative;
+    background-image: url(./images/car_wheel_right.png);
+    height: 18vh;
+    width: 10vw;
+    left: 15.5vw;
+    top: -9vh;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    animation-name: wheelRotate;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} */
+
+ @keyframes wheelRotate {
+    0%{
+        transform: rotate(0 deg);
+    }
+    100%{
+        transform: rotate(360 deg);
+    }
+}
+
+@keyframes trackBackward {
+    100%{
+        transform: translateX(-500vw);
+    }
+     
+} 
+
+@keyframes carMove {
+    0%{
+        top:70vh;
+    }
+    33%{
+        top: 75vh;
+    }
+    66%{
+        top: 70vh;
+    }
+    100%{
+        top: 75vh;
+    }
+    
+}
+
+@keyframes bgSkyShake {
+    0%{
+        bottom:0vh;
+    }
+    50%{
+        bottom:2vh;
+    }
+    100%{
+        bottom:0vh;
+    }
+    
+}
+
+@keyframes bgTreesShake {
+    0%{
+        bottom:0vh;
+    }
+    50%{
+        bottom:4vh;
+    }
+    100%{
+        bottom:0vh;
+    }
+    
+}
+
+@keyframes trackFwd {
+    100%{
+        transform: translateX(500vw);
+    }
+     
+}
