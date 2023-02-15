@@ -5,3 +5,4 @@ The projects are:
 
 1.  Spotify - Clone
 2.  Analog Clock
+3.  Car Animation
