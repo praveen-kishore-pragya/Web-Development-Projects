@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="fun.js"></script>
+
+</head>
+
+<body>
+    <div class="myNavbar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Weather</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Favourites</a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Favourites
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Dharwad</a></li>
+                                <li><a class="dropdown-item" href="#">Hubli</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Bengaluru</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li> -->
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input id="citySearched" class="form-control me-2" type="search" placeholder="City name" aria-label="Search" >
+                        <button id="submitClicked" class="btn btn-outline-success" type="submit" >Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <h1>Weather for <span id="cityName"></span></h1>
+    <div class="weatherDetails">
+
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col cursor-hover">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary cursor-hover">
+                    <h4 class="my-0 fw-normal">Temperature</h4>
+                  </div>
+                  <div class="card-body cursor-hover">
+                    <h1 class="card-title pricing-card-title"><span id="temp"></span><small class="text-muted fw-light"> &#8451;</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Max Temp. = <span id="max_temp"></span></li>
+                      <li>Min Temp. = <span id="min_temp"></li>
+                      <!-- <li>Cloud PCT = <span id="cloud_pct"></li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col cursor-hover">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary cursor-hover">
+                    <h4 class="my-0 fw-normal cursor-hover">Wind</h4>
+                  </div>
+                  <div class="card-body cursor-hover">
+                    <h1 class="card-title pricing-card-title cursor-hover"><span id="wind2"></span><small class="text-muted fw-light"> km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Wind degrees = <span id="wind_degrees"></span></li>
+                      <li>Wind speed = <span id="wind_speed"></span></li>
+                      <!-- <li>Feels Like = <span id="feels_like"></li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col cursor-hover">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary cursor-hover">
+                    <h4 class="my-0 fw-normal">Humidity</h4>
+                  </div>
+                  <div class="card-body cursor-hover">
+                    <h1 class="card-title pricing-card-title cursor-hover"><span id="humidity2"></span><small class="text-muted fw-light cursor-hover"> %</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Humidity = <span id="humidity"></span></li>
+                      <li>Sunset = <span id="sunset"></span></li>
+                      <li>Sunrise = <span id="sunrise"></span></li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="display-6 text-center mb-4">Popular Cities</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th scope="row" class="text-start" style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Cities</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Temp.</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Max Temp.</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Min Temp.</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Wind Degrees</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Wind Speed</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Humidity</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Sunset</th>
+                    <th style="width: 12%; font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif">Sunrise</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Delhi</th>
+                    <td><span id="DelhiTemp"></span></td>
+                    <td><span id="DelhiMaxTemp"></span></td>
+                    <td><span id="DelhiMinTemp"></span></td>
+                    <td><span id="DelhiWindDeg"></span></td>
+                    <td><span id="DelhiWindSpeed"></span></td>
+                    <td><span id="DelhiHumidity"></span></td>
+                    <td><span id="DelhiSunset"></span></td>
+                    <td><span id="DelhiSunrise"></span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Kolkata</th>
+                    <td><span id="KolkataTemp"></span></td>
+                    <td><span id="KolkataMaxTemp"></span></td>
+                    <td><span id="KolkataMinTemp"></span></td>
+                    <td><span id="KolkataWindDeg"></span></td>
+                    <td><span id="KolkataWindSpeed"></span></td>
+                    <td><span id="KolkataHumidity"></span></td>
+                    <td><span id="KolkataSunset"></span></td>
+                    <td><span id="KolkataSunrise"></span></td>
+                  </tr>
+                </tbody>
+        
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Dharwad</th>
+                    <td><span id="DharwadTemp"></span></td>
+                    <td><span id="DharwadMaxTemp"></span></td>
+                    <td><span id="DharwadMinTemp"></span></td>
+                    <td><span id="DharwadWindDeg"></span></td>
+                    <td><span id="DharwadWindSpeed"></span></td>
+                    <td><span id="DharwadHumidity"></span></td>
+                    <td><span id="DharwadSunset"></span></td>
+                    <td><span id="DharwadSunrise"></span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Hubli</th>
+                    <td><span id="HubliTemp"></span></td>
+                    <td><span id="HubliMaxTemp"></span></td>
+                    <td><span id="HubliMinTemp"></span></td>
+                    <td><span id="HubliWindDeg"></span></td>
+                    <td><span id="HubliWindSpeed"></span></td>
+                    <td><span id="HubliHumidity"></span></td>
+                    <td><span id="HubliSunset"></span></td>
+                    <td><span id="HubliSunrise"></span></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row" class="text-start">Bengaluru</th>
+                    <td><span id="BengaluruTemp"></span></td>
+                    <td><span id="BengaluruMaxTemp"></span></td>
+                    <td><span id="BengaluruMinTemp"></span></td>
+                    <td><span id="BengaluruWindDeg"></span></td>
+                    <td><span id="BengaluruWindSpeed"></span></td>
+                    <td><span id="BengaluruHumidity"></span></td>
+                    <td><span id="BengaluruSunset"></span></td>
+                    <td><span id="BengaluruSunrise"></span></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </main>
+
+    </div>
+
+
+</body>
+
+</html>
