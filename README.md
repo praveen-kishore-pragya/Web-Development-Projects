@@ -7,3 +7,5 @@ The projects are:
 2.  Analog Clock
 3.  Car Animation
 4.  Save the T-Rex! - Game
+5.  Snake Mania
+6.  Weather App
