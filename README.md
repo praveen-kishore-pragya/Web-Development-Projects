@@ -9,3 +9,4 @@ The projects are:
 4.  Save the T-Rex! - Game
 5.  Snake Mania
 6.  Weather App
+7.  Windows 11 - Clone
