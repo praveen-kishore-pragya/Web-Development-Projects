@@ -1,0 +1,5 @@
+MAP IMAGE:
+
+start button:
+left-top: 742, 976 px
+right-bottom: 776, 1007 px

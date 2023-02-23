@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background-color: #86a3c2;
+    background-image: url(./assets/bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.taskbar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 200;
+    justify-content: center;
+    background-color: #e6f0fa;
+}
+
+.startRight {
+    position: absolute;
+    right: 0;
+}
+
+.startMenu {
+    position: absolute;
+    bottom: -650px;
+    width: 100%;
+    text-align: center;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: ease-in;
+}
+
+.startMenu img {
+    border-radius: 10px;
+    width: 500px;
+    height: 550px;
+}
+
+.desktop {
+    position: absolute;
+}
